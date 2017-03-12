@@ -49,4 +49,18 @@ public class VectorImpl implements Vector {
 		return this.list;
 	}
 
+	@Override
+	public Vector sub(Vector v) {
+		
+		if(v.get().size() != this.list.size()){
+			throw new IllegalArgumentException();
+		}
+		for(int i=0; i<this.list.size(); i++){
+			Double value = this.list.get(i);
+			value-=v.get().get(i);
+			this.list.set(i, value);
+		}
+		return this;
+	}
+
 }

@@ -44,6 +44,34 @@ import pl.edu.pjwstk.lab2.VectorImpl;
 			
 		}
 		@Test
+		public void subTest() {
+		
+			Vector v1 = new VectorImpl();
+			Vector v2 = new VectorImpl();
+			Vector v3 = new VectorImpl();
+			
+			List<Double> list1 = new ArrayList<Double>();
+			List<Double> list2 = new ArrayList<Double>();
+			List<Double> list3 = new ArrayList<Double>();
+
+
+			list1.add(4.2);
+			list1.add(4.3);
+			
+			list2.add(3.1);
+			list2.add(4.3);
+			
+			list3.add(1.1);
+			list3.add(0.0);
+			
+			v1.set(list1);
+			v2.set(list2);
+			v3.set(list3);
+
+			assertEquals(v3.get(), v1.sub(v2).get());	
+			
+		}
+		@Test
 		public void addTest() {
 			
 		Vector v1 = new VectorImpl();

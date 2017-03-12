@@ -28,5 +28,11 @@ public class VectorMockImpl implements Vector {
 		return null;
 	}
 
+	@Override
+	public Vector sub(Vector v) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
