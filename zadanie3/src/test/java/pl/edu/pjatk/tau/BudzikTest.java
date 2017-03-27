@@ -26,13 +26,13 @@ public class BudzikTest
 	@Test
 	public void shouldRingTest(){
      
-        budzik.addAlarmTime("09:00");
-        replay(time);
-
 		expect(time.getTime()).
 		andReturn("09:00").times(4).
 		andReturn("10:00");
-		
+	
+        replay(time);
+        budzik.addAlarmTime("09:00");
+
         assertEquals(budzik.shouldRing(), true);
         assertEquals(budzik.shouldRing(), false);        
                 
@@ -40,15 +40,6 @@ public class BudzikTest
 
 	}
 	
-	
-	@Test
-	public void addAlarmTimeTest(){
-	
-        assertEquals(budzik.shouldRing(), false);       
-		budzik.addAlarmTime("07:00");		
-        assertEquals(budzik.shouldRing(), true);
 
-	}
-	
 		
 }
