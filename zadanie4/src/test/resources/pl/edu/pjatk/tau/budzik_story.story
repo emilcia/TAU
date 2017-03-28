@@ -1,5 +1,5 @@
 
-Scenario:  budzik dzwoni kilka razy
+Scenario:  budzik dzwoni o wybranej porze
 
 Given nadchodzi godzina <czas>
 When na budziku byla ustawiona godzina <godzina>
