@@ -35,7 +35,7 @@ public class BudzikSteps {
     	budzik.addAlarmTime(czas);
     }
 
-    @Then("budzik powinien zadzwonic o godzinie $wynik")
+    @Then("budzik powinien zadzwonic o ustawionej godzinie $wynik")
     public void shouldRing(Boolean result) {
     	assertEquals(budzik.shouldRing(), result);
     }

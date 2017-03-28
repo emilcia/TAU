@@ -1,9 +1,9 @@
 
-Scenario:  budzik dzwoni kilka razy
+Scenario:  budzik dzwoni o wybranej porze
 
 Given nadchodzi godzina <czas>
 When na budziku byla ustawiona godzina <godzina>
-Then budzik powinien zadzwonic o godzinie <wynik>
+Then budzik powinien zadzwonic o ustawionej godzinie <wynik>
 
 Examples:
 |czas|godzina|wynik|
