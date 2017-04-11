@@ -16,30 +16,33 @@ public class SiteSteps {
         this.pages = pages;
     }
 
-    @Given("user is on helpdesk page")
+    @Given("user is on main page")
     public void userOnHelpdeskPage(){
         pages.helpdesk().open();
     }
 
+    @When("user clicks the login tab with wrong attributes")
+    public void clicksTabLink() {
+        pages.helpdesk().loginFalse();
+    }
     @When("user clicks the login tab")
     public void userClicksTabLink() {
         pages.helpdesk().loginTrue();
 
     }
-    @When("user clicks the login tab with wrong attributes")
-    public void clicksTabLink() {
-        pages.helpdesk().loginFalse();
-    }
 
+    @Then("login failed")
+    public void loginFailed() {
+    	assertEquals(pages.helpdesk().loginFailed(), true);
+    }
+    @Then("login success")
+    public void loginSuccess() {
+    	assertEquals(pages.helpdesk().loginSuccess(), true);
+    }
     @Then("reload page to check session")
     public void reloadPage() {
         pages.helpdesk().open();
-    	assertEquals(pages.helpdesk().session(), true);
-    }
-    @Then("login failed")
-    public void loginFailed() {
-        pages.helpdesk().open();
-    	assertEquals(pages.helpdesk().loginFailed(), true);
+    	assertEquals(pages.helpdesk().loginSuccess(), true);
     }
 
 }

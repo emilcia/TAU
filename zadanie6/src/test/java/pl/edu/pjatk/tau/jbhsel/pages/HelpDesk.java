@@ -39,7 +39,7 @@ public class HelpDesk extends WebDriverPage {
         e = findElement(By.className("login"));
         e.click();
     }
-    public boolean session(){
+    public boolean loginSuccess(){
     	WebElement e = findElement(By.className("logout"));
     		if(!e.getAttribute("style").contains("display: none")){
     	        e = findElement(By.className("logout"));
