@@ -65,8 +65,8 @@ public class PersonApi {
     	
         return patientManager.deletePatient(patient);    	
     }
-    @RequestMapping(value = "/patient/getall", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE
-    )
+    
+    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET, value = "/patient/getall")
     @ResponseBody
     public List<Patient> getAllPatients() {
     	

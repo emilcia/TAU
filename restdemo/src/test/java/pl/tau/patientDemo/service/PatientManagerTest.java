@@ -80,21 +80,24 @@ public class PatientManagerTest {
 		patientManager.clearPatient();
 		assertEquals(1,patientManager.addPatient(person));
 		assertEquals(1,patientManager.updatePatient(updatePerson));
+				
+		Patient personRetrieved = patientManager.getPatient(person);
 		
-	//	List<Patient> persons = patientManager.getAllPersons();
-	//	Patient personRetrieved = persons.get(0);
-		
-	//	assertEquals(NAME_1, personRetrieved.getName());
-	//	assertEquals(DRUG_1, personRetrieved.getDrug());
-	//	assertEquals(PORTION_1, personRetrieved.getPortion());
-	//	assertEquals(FREQUENCY_1, personRetrieved.getFrequency());
+		assertEquals("Marian", personRetrieved.getName());
+		assertEquals("Rutinoskorbin", personRetrieved.getDrug());
 
 	}
 	@Test
 	public void checkDelete() throws SQLException{
 		Patient person = new Patient(NAME_1, DRUG_1, PORTION_1, FREQUENCY_1, PATIENTNUMBER_1);
 		patientManager.clearPatient();
-		assertEquals(0,patientManager.deletePatient(person));
+		assertEquals(1,patientManager.addPatient(person));
+		assertEquals(1,patientManager.deletePatient(person));
+		
+		Patient personRetrieved = patientManager.getPatient(person);
+
+		assertEquals(null, personRetrieved.getName());
+
 
 	}
 

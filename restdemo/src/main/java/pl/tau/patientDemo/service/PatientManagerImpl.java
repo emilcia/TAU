@@ -58,7 +58,7 @@ public class PatientManagerImpl implements PatientManager{
 		addPatientStmt = connection
 				.prepareStatement("INSERT INTO Patient (name, drug, portion, frequency, patientNumber) VALUES (?, ?, ?, ?, ?)");
 		deletePatientStmt = connection
-				.prepareStatement("DELETE FROM Patient where id = ?");
+				.prepareStatement("DELETE FROM Patient where patientNumber = ?");
 		getAllPatientsStmt = connection
 				.prepareStatement("SELECT id, name, drug, portion, frequency, patientNumber FROM Patient");
 		getPatientStmt = connection
@@ -73,7 +73,7 @@ public class PatientManagerImpl implements PatientManager{
 	}
 
 	public int deletePatient(Patient person) throws SQLException {
-		deletePatientStmt.setLong(1, person.getId());
+		deletePatientStmt.setLong(1, person.getPatientNumber());
 		int count = deletePatientStmt.executeUpdate();
 		return count;
 	}
