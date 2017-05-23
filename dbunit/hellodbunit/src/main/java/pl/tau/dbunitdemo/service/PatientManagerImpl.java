@@ -35,8 +35,9 @@ public class PatientManagerImpl implements PatientManager{
 
 	private Statement statement;
 
-	public PatientManagerImpl() throws SQLException {
-		connection = DriverManager.getConnection(url);
+	public PatientManagerImpl(Connection connection) throws SQLException {
+		//connection = DriverManager.getConnection(url);
+		this.connection = connection;
 		statement = connection.createStatement();
 
 		ResultSet rs = connection.getMetaData().getTables(null, null, null,

@@ -31,6 +31,7 @@ public class PersonManagerTest extends DBTestCase {
 
     public PersonManagerTest() throws Exception {
         super("PatientManagerImpl test");
+        patientManager = new PatientManagerImpl(this.getConnection().getConnection());
     }
 
     protected DatabaseOperation getSetUpOperation() throws Exception {
@@ -71,7 +72,7 @@ public class PersonManagerTest extends DBTestCase {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        patientManager = new PatientManagerImpl();
+        patientManager = new PatientManagerImpl(this.getConnection().getConnection());
     }
 	
 	@Test
