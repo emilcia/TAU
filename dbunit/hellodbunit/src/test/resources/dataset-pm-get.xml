@@ -1,0 +1,5 @@
+<dataset>
+    <patient NAME="Stefan" DRUG="aspiryna" PORTION="1" FREQUENCY="daily" PATIENTNUMBER="1" />
+    <patient NAME="Genowefa" DRUG="apap" PORTION="5" FREQUENCY="monthly" PATIENTNUMBER="2" />
+    <patient NAME="Alina" DRUG="Polopirynka" PORTION="2" FREQUENCY="weekly" PATIENTNUMBER="3" />
+</dataset>
