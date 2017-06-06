@@ -94,8 +94,7 @@ public class SellingManagerDBUnitTest {
 		List<Patient> patients = sellingManager.patientsFromHospital(h);
 
 		assertEquals(1, patients.size());
-		//assertEquals("Bolek", patients.get(0).getName());
-        //assertEquals(2, sellingManager.getAllHospitals().size());
+
         
 	}
 	

@@ -48,7 +48,6 @@ public class SellingManagerTest {
 		Hospital hospital = new Hospital();
 		hospital.setName(NAME_1);
 		hospital.setHospitalNumber(NUMBER_1);
-		// ... other properties here
 
 		sellingManager.addHospital(hospital);
 
@@ -56,7 +55,6 @@ public class SellingManagerTest {
 
 		assertEquals(NAME_1, retrievedHospital.getName());
 		assertEquals(NUMBER_1, retrievedHospital.getHospitalNumber());
-		// ... check other properties here
 	}
 	@Test
 	public void deleteHospitalCheck() {
