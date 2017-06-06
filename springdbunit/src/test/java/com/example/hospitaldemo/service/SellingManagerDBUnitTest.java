@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.hospitaldemo.domain.Hospital;
 import com.example.hospitaldemo.domain.Patient;
-import com.example.hospitaldemo.service.SellingManager;
+import com.example.hospitaldemo.service.HospitalManager;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
@@ -46,7 +46,7 @@ public class SellingManagerDBUnitTest {
 
 
 	@Autowired
-	SellingManager sellingManager;
+	HospitalManager hospitalManager;
 
 	@Test
 	@DatabaseSetup("/fullData.xml")
@@ -59,8 +59,8 @@ public class SellingManagerDBUnitTest {
         h.setHospitalNumber(2);
         h.setRegistrationDate(new Date());
         
-        sellingManager.addHospital(h);
-        assertEquals(2, sellingManager.getAllHospitals().size());
+        hospitalManager.addHospital(h);
+        assertEquals(2, hospitalManager.getAllHospitals().size());
         
 	}
 	@Test
@@ -69,10 +69,10 @@ public class SellingManagerDBUnitTest {
 	assertionMode = DatabaseAssertionMode.NON_STRICT)
 	public void deleteHospitalCheck() {
         
-		Hospital h = sellingManager.findHospitalByNumber(2);
+		Hospital h = hospitalManager.findHospitalByNumber(2);
 
-        sellingManager.deleteHospital(h);
-        assertEquals(1, sellingManager.getAllHospitals().size());
+        hospitalManager.deleteHospital(h);
+        assertEquals(1, hospitalManager.getAllHospitals().size());
         
 	}
 	@Test
@@ -81,20 +81,21 @@ public class SellingManagerDBUnitTest {
 	assertionMode = DatabaseAssertionMode.NON_STRICT)
 	public void registerPatientCheck() {
         
-		Hospital h = sellingManager.findHospitalByNumber(1);
+		Hospital h = hospitalManager.findHospitalByNumber(1);
 
 		Patient patient = new Patient();
 		patient.setName("Kalinka");
 		patient.setPatientNumber(30);
 
-		Long patientId = sellingManager.addNewPatient(patient);
+		Long patientId = hospitalManager.addNewPatient(patient);
 
-		sellingManager.registerPatient(h.getId(), patientId);
+		hospitalManager.registerPatient(h.getId(), patientId);
 
-		List<Patient> patients = sellingManager.patientsFromHospital(h);
+		List<Patient> patients = hospitalManager.patientsFromHospital(h);
 
 		assertEquals(1, patients.size());
-
+		//assertEquals("Bolek", patients.get(0).getName());
+        //assertEquals(2, sellingManager.getAllHospitals().size());
         
 	}
 	
