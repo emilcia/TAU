@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <HOSPITAL ID="1" NAME="SzpitalMiejski" HOSPITALNUMBER="1"/>
+  <PATIENT ID="1" NAME="lolek" PATIENTNUMBER="2" PORTION="2"/>
+  
+</dataset>
